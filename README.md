@@ -75,6 +75,44 @@ if __name__ == "__main__":
     print("\n-------------------------------------------------------------------------\n")
 ```
 
+## Example output
+```
+------------------------------ Before Attack ------------------------------
+
+Alice's secret key: [ 5 -4  0  3  2  6  1  3]
+
+Bob's secret key: [-1  6  5 -4  5  8 -2  6]
+
+Re-encryption key rk1 shape: (80, 8), rk2 shape: (80,)
+
+------------------------------ After Attack ------------------------------
+
+Result after applying ``decryption'' to (rk1, rk2) using Bob's secret key: 
+[[   1 1021    0    4    4    6    0    5]
+ [   8 1017    0    9    0   10    2    5]
+ [  18 1011    1    6   13   25    0   12]
+ [  40  985 1022   27   13   51    7   23]
+ [  78  959    3   51   31   97   18   52]
+ [ 164  893 1023   96   61  195   38  102]
+ [ 323  763    2  192  129  380   67  186]
+ [ 640  514    2  387  251  768  132  386]
+ [ 266    7    0  768  513  515  255  770]
+ [ 510    3 1020  513    6 1021  516  511]]
+
+Recovered secrets:
+Secret 0: bits = [0, 0, 0, 0, 0, 0, 0, 1, 0, 1], value = 5, ska0 = 5
+Secret 1: bits = [1, 1, 1, 1, 1, 1, 1, 1, 0, 0], value = -4, ska1 = -4
+Secret 2: bits = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0], value = 0, ska2 = 0
+Secret 3: bits = [0, 0, 0, 0, 0, 0, 0, 0, 1, 1], value = 3, ska3 = 3
+Secret 4: bits = [0, 0, 0, 0, 0, 0, 0, 0, 1, 0], value = 2, ska4 = 2
+Secret 5: bits = [0, 0, 0, 0, 0, 0, 0, 1, 1, 0], value = 6, ska5 = 6
+Secret 6: bits = [0, 0, 0, 0, 0, 0, 0, 0, 0, 1], value = 1, ska6 = 1
+Secret 7: bits = [0, 0, 0, 0, 0, 0, 0, 0, 1, 1], value = 3, ska7 = 3
+
+Attack success: True
+
+-------------------------------------------------------------------------
+```
 ## Credits
 This project was developed with assistance from **Microsoft Copilot**, which provided algorithmic guidance and code generation support.
 
